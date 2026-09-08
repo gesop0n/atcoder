@@ -74,6 +74,11 @@
         devShells.atcli = pkgs.mkShell {
           packages = cppTools ++ [ rust ];
         };
+
+        # 問題解答環境
+        devShells.work = pkgs.mkShell {
+          packages = cppTools ++ [ atcli ];
+        };
       }
     );
 }
