@@ -1,0 +1,4 @@
+/.atcli/
+/result
+**/target/
+.DS_Store

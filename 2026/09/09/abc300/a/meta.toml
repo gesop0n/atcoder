@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc300/tasks/abc300_a"
+contest = "abc300"
+task_id = "abc300_a"
+label = "A"
+title = "N-choice question"
+time_limit_ms = 2000
+interactive = false

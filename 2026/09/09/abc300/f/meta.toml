@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc300/tasks/abc300_f"
+contest = "abc300"
+task_id = "abc300_f"
+label = "F"
+title = "More Holidays"
+time_limit_ms = 2000
+interactive = false

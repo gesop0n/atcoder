@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc300/tasks/abc300_e"
+contest = "abc300"
+task_id = "abc300_e"
+label = "E"
+title = "Dice Product 3"
+time_limit_ms = 2000
+interactive = false

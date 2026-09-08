@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc300/tasks/abc300_c"
+contest = "abc300"
+task_id = "abc300_c"
+label = "C"
+title = "Cross"
+time_limit_ms = 2000
+interactive = false

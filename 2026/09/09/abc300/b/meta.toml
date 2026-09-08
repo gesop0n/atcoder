@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc300/tasks/abc300_b"
+contest = "abc300"
+task_id = "abc300_b"
+label = "B"
+title = "Same Map in the RPG World"
+time_limit_ms = 2000
+interactive = false

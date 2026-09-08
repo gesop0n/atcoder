@@ -1,0 +1,22 @@
+[repository]
+solutions_dir = "."
+template = "template/main.cpp"
+
+[cpp]
+compiler = "g++"
+standard = "gnu++23"
+include_dirs = ["lib", "ac-library"]
+debug_flags = [
+  "-O0",
+  "-g3",
+  "-Wall",
+  "-Wextra",
+  "-Wshadow",
+  "-Wconversion",
+]
+release_flags = ["-O2", "-Wall", "-Wextra", "-DATCODER", "-DONLINE_JUDGE"]
+
+[test]
+# ローカル環境と AtCoder の実行環境には差があるため、問題の制限時間に余裕を持たせる。
+timeout_multiplier = 2.0
+minimum_timeout_ms = 1000

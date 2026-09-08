@@ -1,0 +1,7 @@
+-std=gnu++23
+-Wall
+-Wextra
+-Wshadow
+-Wconversion
+-Ilib
+-Iac-library
