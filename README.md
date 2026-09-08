@@ -24,7 +24,7 @@ $ cargo test --manifest-path tools/atcli/Cargo.toml
 
 ```console
 $ atcli new abc300
-# 例: 2026/09/09/abc300/{a,b,c,d,e,f,g,h}
+# 例: 2026/09/09/abc300/{a,b,c,d,e,f,g,ex}
 ```
 
 日付の明示も可能。
