@@ -2,3 +2,7 @@
 /result
 **/target/
 .DS_Store
+
+# direnv
+.direnv/
+.envrc
