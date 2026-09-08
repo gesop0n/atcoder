@@ -40,9 +40,18 @@
           program = "${atcli}/bin/atcli";
           meta.description = "Prepare and locally test AtCoder solutions";
         };
-        cppTools = with pkgs; [
-          gcc15
-          clang-tools
+        gcc = pkgs.gcc15;
+        clangdWithGcc = pkgs.writeShellScriptBin "clangd" ''
+          exec ${pkgs.clang-tools}/bin/clangd \
+            --query-driver="${gcc}/bin/g++,/usr/bin/g++" \
+            "$@"
+        '';
+        clangdShellHook = ''
+          export PATH="${clangdWithGcc}/bin:$PATH"
+        '';
+        cppTools = [
+          gcc
+          clangdWithGcc
         ];
       in
       {
@@ -68,16 +77,19 @@
             # default に rust を追加しないと editor で lsp が動かない
             rust
           ];
+          shellHook = clangdShellHook;
         };
 
         # atcli の開発環境。E2E テストもできるよう C++ toolchain を含める。
         devShells.atcli = pkgs.mkShell {
           packages = cppTools ++ [ rust ];
+          shellHook = clangdShellHook;
         };
 
         # 問題解答環境
         devShells.work = pkgs.mkShell {
           packages = cppTools ++ [ atcli ];
+          shellHook = clangdShellHook;
         };
       }
     );
