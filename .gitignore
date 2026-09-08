@@ -6,3 +6,7 @@
 # direnv
 .direnv/
 .envrc
+
+
+# editor settings
+.zed/settings.json
