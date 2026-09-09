@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc462/tasks/abc462_a"
+contest = "abc462"
+task_id = "abc462_a"
+label = "A"
+title = "Secret Numbers"
+time_limit_ms = 2000
+interactive = false
