@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc467/tasks/abc467_b"
+contest = "abc467"
+task_id = "abc467_b"
+label = "B"
+title = "Keep the Change"
+time_limit_ms = 2000
+interactive = false
