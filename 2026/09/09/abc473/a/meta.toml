@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc473/tasks/abc473_a"
+contest = "abc473"
+task_id = "abc473_a"
+label = "A"
+title = "Second Half Sum"
+time_limit_ms = 2000
+interactive = false
