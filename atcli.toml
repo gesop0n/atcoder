@@ -23,6 +23,6 @@ minimum_timeout_ms = 1000
 
 [submit]
 # AtCoder の言語 ID、言語名、または一意に絞れる名前の一部。
-language = "C++ 23"
+language = "C++23 (GCC"
 watch = true
 poll_interval_ms = 2000

@@ -72,10 +72,12 @@ REVEL_SESSION: # 値は画面に表示されない
 
 ```console
 $ atcli submit
-$ atcli submit --language 'C++ 23' --yes
+$ atcli submit --language 'C++23 (GCC' --yes
 $ atcli submit --list-languages
 $ atcli submit --no-watch
 ```
+
+AtCoder の提出ページで CAPTCHA が要求される練習提出は、非公式 CLI から直接送信できない。`atcli submit` が表示する URL をブラウザで開き、表示された `main.cpp` を貼り付けて CAPTCHA を完了して提出する。開催中コンテストなど、提出ページに CAPTCHA がない場合は従来どおり CLI から直接提出する。
 
 テストに失敗した解答は提出しない。interactive 問題など、ローカル判定できない場合に限り、確認のうえ `--no-test` で明示的に省略できる。保存したセッションを削除するには `atcli logout` を使う。
 
@@ -83,7 +85,7 @@ $ atcli submit --no-watch
 
 ```toml
 [submit]
-language = "C++ 23"
+language = "C++23 (GCC"
 watch = true
 poll_interval_ms = 2000
 ```
