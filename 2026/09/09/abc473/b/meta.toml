@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc473/tasks/abc473_b"
+contest = "abc473"
+task_id = "abc473_b"
+label = "B"
+title = "Old Maid"
+time_limit_ms = 2000
+interactive = false
