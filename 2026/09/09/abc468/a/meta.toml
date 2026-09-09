@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc468/tasks/abc468_a"
+contest = "abc468"
+task_id = "abc468_a"
+label = "A"
+title = "Maximal Value"
+time_limit_ms = 2000
+interactive = false
