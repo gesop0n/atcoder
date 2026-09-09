@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc469/tasks/abc469_a"
+contest = "abc469"
+task_id = "abc469_a"
+label = "A"
+title = "Train Car"
+time_limit_ms = 2000
+interactive = false
