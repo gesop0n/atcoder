@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc471/tasks/abc471_b"
+contest = "abc471"
+task_id = "abc471_b"
+label = "B"
+title = "Survey Tabulation"
+time_limit_ms = 2000
+interactive = false
