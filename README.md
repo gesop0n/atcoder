@@ -66,7 +66,7 @@ $ atcli login --session
 REVEL_SESSION: # 値は画面に表示されない
 ```
 
-ブラウザ認証がない環境では `atcli login` でユーザー名とパスワードによるログインも試せる。CI では `ATCODER_USERNAME` / `ATCODER_PASSWORD`、Cookie を直接取り込む場合は `ATCODER_REVEL_SESSION` を利用できる。パスワードは保存せず、セッション Cookie だけを OS のユーザー用 state/data ディレクトリへパーミッション `0600` で保存する。
+ブラウザ認証がない環境では `atcli login` でユーザー名とパスワードによるログインも試せる。CI では `ATCODER_USERNAME` / `ATCODER_PASSWORD`、Cookie を直接取り込む場合は `ATCODER_REVEL_SESSION` を利用できる。パスワードは保存せず、セッション Cookie だけを `~/.atcli/session.json` へパーミッション `0600` で保存する。
 
 問題ディレクトリで `submit` を実行すると、`--release` 相当で全ローカルテストを行い、提出内容を確認してから送信する。提出後はデフォルトで判定完了まで監視する。
 
