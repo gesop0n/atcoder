@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc472/tasks/abc472_b"
+contest = "abc472"
+task_id = "abc472_b"
+label = "B"
+title = "Break a Stick"
+time_limit_ms = 2000
+interactive = false

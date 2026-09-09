@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc471/tasks/abc471_a"
+contest = "abc471"
+task_id = "abc471_a"
+label = "A"
+title = "Nine or Nein"
+time_limit_ms = 2000
+interactive = false
