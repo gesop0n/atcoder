@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc470/tasks/abc470_a"
+contest = "abc470"
+task_id = "abc470_a"
+label = "A"
+title = "Fizz"
+time_limit_ms = 2000
+interactive = false
