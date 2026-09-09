@@ -20,3 +20,9 @@ release_flags = ["-O2", "-Wall", "-Wextra", "-DATCODER", "-DONLINE_JUDGE"]
 # ローカル環境と AtCoder の実行環境には差があるため、問題の制限時間に余裕を持たせる。
 timeout_multiplier = 2.0
 minimum_timeout_ms = 1000
+
+[submit]
+# AtCoder の言語 ID、言語名、または一意に絞れる名前の一部。
+language = "C++ 23"
+watch = true
+poll_interval_ms = 2000

@@ -1,6 +1,6 @@
 # atcoder
 
-AtCoder の C++ 解答と、準備・サンプルテストを行う Rust 製 CLI `atcli` を管理するリポジトリ。提出機能は実装していない。
+AtCoder の C++ 解答と、準備・サンプルテスト・提出を行う Rust 製 CLI `atcli` を管理するリポジトリ。
 
 ## セットアップ
 
@@ -56,6 +56,37 @@ $ atcli fetch
 ```
 
 `tests/my-1.in` のように対応する `.out` がないケースは、実行結果を表示するだけで合否判定しない。`.out` を置くと通常の比較対象になる。
+
+### ログインと提出
+
+AtCoder のログイン画面で Cloudflare のブラウザ認証が求められる場合は、ブラウザでログインしてから Developer Tools の Cookie 一覧にある `REVEL_SESSION` を取り込む。
+
+```console
+$ atcli login --session
+REVEL_SESSION: # 値は画面に表示されない
+```
+
+ブラウザ認証がない環境では `atcli login` でユーザー名とパスワードによるログインも試せる。CI では `ATCODER_USERNAME` / `ATCODER_PASSWORD`、Cookie を直接取り込む場合は `ATCODER_REVEL_SESSION` を利用できる。パスワードは保存せず、セッション Cookie だけを OS のユーザー用 state/data ディレクトリへパーミッション `0600` で保存する。
+
+問題ディレクトリで `submit` を実行すると、`--release` 相当で全ローカルテストを行い、提出内容を確認してから送信する。提出後はデフォルトで判定完了まで監視する。
+
+```console
+$ atcli submit
+$ atcli submit --language 'C++ 23' --yes
+$ atcli submit --list-languages
+$ atcli submit --no-watch
+```
+
+テストに失敗した解答は提出しない。interactive 問題など、ローカル判定できない場合に限り、確認のうえ `--no-test` で明示的に省略できる。保存したセッションを削除するには `atcli logout` を使う。
+
+提出のデフォルト値は `atcli.toml` の `[submit]` で設定する。
+
+```toml
+[submit]
+language = "C++ 23"
+watch = true
+poll_interval_ms = 2000
+```
 
 ## ディレクトリ
 
