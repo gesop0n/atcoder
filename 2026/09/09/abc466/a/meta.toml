@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc466/tasks/abc466_a"
+contest = "abc466"
+task_id = "abc466_a"
+label = "A"
+title = "Compromise"
+time_limit_ms = 2000
+interactive = false
