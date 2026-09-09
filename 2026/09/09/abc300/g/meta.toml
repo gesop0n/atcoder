@@ -1,7 +1,0 @@
-url = "https://atcoder.jp/contests/abc300/tasks/abc300_g"
-contest = "abc300"
-task_id = "abc300_g"
-label = "G"
-title = "P-smooth number"
-time_limit_ms = 4000
-interactive = false

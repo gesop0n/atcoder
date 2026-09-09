@@ -1,7 +1,0 @@
-url = "https://atcoder.jp/contests/abc300/tasks/abc300_h"
-contest = "abc300"
-task_id = "abc300_h"
-label = "Ex"
-title = "Fibonacci: Revisited"
-time_limit_ms = 6000
-interactive = false
