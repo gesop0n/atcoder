@@ -1,2 +1,4 @@
 CompileFlags:
   Compiler: g++
+  # 競技プログラミングでは signed/unsigned の暗黙変換警告を抑制する
+  Add: [-Wno-sign-conversion]
