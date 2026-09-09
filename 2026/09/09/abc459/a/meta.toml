@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc459/tasks/abc459_a"
+contest = "abc459"
+task_id = "abc459_a"
+label = "A"
+title = "Hell, World!"
+time_limit_ms = 2000
+interactive = false
