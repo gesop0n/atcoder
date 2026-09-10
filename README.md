@@ -53,18 +53,27 @@ $ atcli test --rebuild
 
 同じビルド設定で `main.cpp` と依存ヘッダに変更がなければ、前回のビルド結果を再利用する。`--rebuild` を指定するとキャッシュを使わず再ビルドする。
 
-今日の取り組みディレクトリへ移動しやすくするには、パスを表示する `atcli path today` と shell 関数を組み合わせる。
+今日の取り組みディレクトリへ移動しやすくするには、`~/.zshrc` など起動時に読み込まれる shell 設定で、`atcli path today` と `cd` を組み合わせた関数を定義する。
 
 ```zsh
 atcd() {
-  local dir
-  dir="$(atcli path today "$@")" && cd "$dir"
+  local atcli_target="today"
+  local atcli_dir
+  case "$1" in
+    root | today)
+      atcli_target="$1"
+      shift
+      ;;
+  esac
+  atcli_dir="$(command atcli path "$atcli_target" "$@")" || return
+  builtin cd "$atcli_dir"
 }
 ```
 
 ```console
 $ atcd
 $ atcd --date 2026-09-08
+$ atcd root
 ```
 
 サンプルを問題ページから取り直すには `atcli fetch` を使う。`sample-*.in` と `sample-*.out` だけを更新し、`my-*.in` などの自作ケースは残す。
