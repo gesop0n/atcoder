@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc463/tasks/abc463_b"
+contest = "abc463"
+task_id = "abc463_b"
+label = "B"
+title = "Train Reservation"
+time_limit_ms = 2000
+interactive = false
