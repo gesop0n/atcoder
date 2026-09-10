@@ -20,11 +20,12 @@ $ cargo test --manifest-path tools/atcli/Cargo.toml
 
 ## 使い方
 
-コンテストの全問題を、コマンドを実行した日付の配下に作成する。
+コンテストの全問題について、共有する問題データと、コマンドを実行した日付の取り組みを作成する。
 
 ```console
 $ atcli new abc300
-# 例: 2026/09/09/abc300/{a,b,c,d,e,f,g,ex}
+# 問題データ: problems/abc300/{a,b,c,d,e,f,g,ex}
+# 取り組み:   attempts/2026/09/09/abc300/{a,b,c,d,e,f,g,ex}
 ```
 
 日付の明示もできる。
@@ -40,13 +41,30 @@ $ atcli new abc300 a c ex
 # 例: 2026/09/09/abc300/{a,c,ex}
 ```
 
-問題ディレクトリへ移動して解答を書き、サンプルを実行する。
+取り組みディレクトリへ移動して解答を書き、サンプルを実行する。
 
 ```console
-$ cd 2026/09/08/abc300/a
+$ cd attempts/2026/09/08/abc300/a
 $ atcli test
 $ atcli test --release
 $ atcli test --case sample-1
+$ atcli test --rebuild
+```
+
+同じビルド設定で `main.cpp` と依存ヘッダに変更がなければ、前回のビルド結果を再利用する。`--rebuild` を指定するとキャッシュを使わず再ビルドする。
+
+今日の取り組みディレクトリへ移動しやすくするには、パスを表示する `atcli path today` と shell 関数を組み合わせる。
+
+```zsh
+atcd() {
+  local dir
+  dir="$(atcli path today "$@")" && cd "$dir"
+}
+```
+
+```console
+$ atcd
+$ atcd --date 2026-09-08
 ```
 
 サンプルを問題ページから取り直すには `atcli fetch` を使う。`sample-*.in` と `sample-*.out` だけを更新し、`my-*.in` などの自作ケースは残す。
@@ -68,7 +86,7 @@ REVEL_SESSION: # 値は画面に表示されない
 
 ブラウザ認証がない環境では `atcli login` でユーザー名とパスワードによるログインも試せる。CI では `ATCODER_USERNAME` / `ATCODER_PASSWORD`、Cookie を直接取り込む場合は `ATCODER_REVEL_SESSION` を利用できる。パスワードは保存せず、セッション Cookie だけを `~/.atcli/session.json` へパーミッション `0600` で保存する。
 
-問題ディレクトリで `submit` を実行すると、`--release` 相当で全ローカルテストを行い、提出内容を確認してから送信する。提出後はデフォルトで判定完了まで監視する。
+取り組みディレクトリで `submit` を実行すると、`--release` 相当で全ローカルテストを行い、提出内容を確認してから送信する。提出後はデフォルトで判定完了まで監視する。
 
 ```console
 $ atcli submit
@@ -92,15 +110,24 @@ poll_interval_ms = 2000
 
 ## ディレクトリ
 
+問題ごとに共有するメタデータとテストは `problems/` に置く。
+
 ```text
-YYYY/MM/DD/contest/task/
-├── main.cpp
+problems/contest/task/
 ├── meta.toml
 └── tests/
     ├── sample-1.in
     └── sample-1.out
 ```
 
-日付はコンテスト開催日ではなく、`atcli new` を実行して解き始めた日付になる。設定とルートマーカは `atcli.toml`、clangd 用設定は `compile_flags.txt` に置く。
+日付ごとの取り組みは `attempts/` に置く。`attempt.toml` の `problem` は、設定した `problems_dir` から問題データへの相対パスになる。
+
+```text
+attempts/YYYY/MM/DD/contest/task/
+├── attempt.toml  # problem = "abc300/a"
+└── main.cpp
+```
+
+同じ問題へ別の日に取り組む場合、`problems/` のメタデータとテストは再利用し、日付ごとに異なる `main.cpp` と `attempt.toml` を作成する。日付はコンテスト開催日ではなく、`atcli new` を実行して解き始めた日付になる。設定とルートマーカは `atcli.toml`、clangd 用設定は `compile_flags.txt` に置く。
 
 ローカルが macOS の場合、コンパイラのメジャーバージョンを合わせても AtCoder の x86_64 Linux 環境を完全には再現していない。

@@ -1,5 +1,6 @@
 [repository]
-solutions_dir = "."
+problems_dir = "problems"
+attempts_dir = "attempts"
 template = "template/main.cpp"
 
 [cpp]
