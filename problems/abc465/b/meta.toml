@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc465/tasks/abc465_b"
+contest = "abc465"
+task_id = "abc465_b"
+label = "B"
+title = "Parking 2"
+time_limit_ms = 2000
+interactive = false
