@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc467/tasks/abc467_c"
+contest = "abc467"
+task_id = "abc467_c"
+label = "C"
+title = "Adjacent Sums (easy)"
+time_limit_ms = 2000
+interactive = false

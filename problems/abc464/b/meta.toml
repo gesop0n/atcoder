@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc464/tasks/abc464_b"
+contest = "abc464"
+task_id = "abc464_b"
+label = "B"
+title = "Crop"
+time_limit_ms = 2000
+interactive = false

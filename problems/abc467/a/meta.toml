@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc467/tasks/abc467_a"
+contest = "abc467"
+task_id = "abc467_a"
+label = "A"
+title = "Obesity"
+time_limit_ms = 2000
+interactive = false
