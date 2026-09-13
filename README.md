@@ -34,11 +34,21 @@ $ atcli new abc300
 $ atcli new abc300 --date 2026-09-08
 ```
 
-問題を指定した場合は、その問題だけを作成する。ラベルは大文字小文字を区別せず、複数指定できる。
+問題を指定した場合は、その問題だけを作成する。ラベルは大文字小文字を区別せず、複数指定できる。`..` で範囲も指定できる。範囲はラベルの文字列計算ではなくコンテストの問題順で解決するため、ラベルの付け方に依存しない。
 
 ```console
 $ atcli new abc300 a c ex
 # 例: 2026/09/09/abc300/{a,c,ex}
+$ atcli new abc300 c..e
+# 例: 2026/09/09/abc300/{c,d,e}
+```
+
+`tessoku-book`（競技プログラミングの鉄則 演習問題集）のような常設コンテストも同じように扱えるが、151 問あるため問題指定を省略すると 1 日分の取り組みとして全問を作ってしまう。問題数が 20 問を超えるコンテストでは問題の指定を必須とし、本当に全問作成する場合だけ `--all` を指定する。
+
+```console
+$ atcli new tessoku-book           # エラー。問題の指定を促す
+$ atcli new tessoku-book a01..a05  # problems/tessoku-book/{a01,a02,a03,a04,a05}
+$ atcli new tessoku-book --all     # 151 問すべて。時間がかかる
 ```
 
 取り組みディレクトリへ移動して解答を書き、サンプルを実行する。
@@ -106,7 +116,7 @@ $ atcli submit --list-languages
 $ atcli submit --no-watch
 ```
 
-AtCoder の提出ページで CAPTCHA が要求される練習提出は、非公式 CLI から直接送信できない。`atcli submit` が表示する URL をブラウザで開き、表示された `main.cpp` を貼り付けて CAPTCHA を完了して提出する。開催中コンテストなど、提出ページに CAPTCHA がない場合は従来どおり CLI から直接提出する。
+AtCoder の提出ページで CAPTCHA が要求される練習提出は、非公式 CLI から直接送信できない。`tessoku-book` などの常設コンテストへの提出がこれにあたる。`atcli submit` が表示する URL をブラウザで開き、表示された `main.cpp` を貼り付けて CAPTCHA を完了して提出する。開催中コンテストなど、提出ページに CAPTCHA がない場合は従来どおり CLI から直接提出する。
 
 テストに失敗した解答は提出しない。interactive 問題など、ローカル判定できない場合に限り、確認のうえ `--no-test` で明示的に省略できる。保存したセッションを削除するには `atcli logout` を使う。
 
