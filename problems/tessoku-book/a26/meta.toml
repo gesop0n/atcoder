@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_z"
+contest = "tessoku-book"
+task_id = "tessoku_book_z"
+label = "A26"
+title = "Prime Check"
+time_limit_ms = 1000
+interactive = false
