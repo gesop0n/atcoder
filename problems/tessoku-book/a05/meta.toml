@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_e"
+contest = "tessoku-book"
+task_id = "tessoku_book_e"
+label = "A05"
+title = "Three Cards"
+time_limit_ms = 2000
+interactive = false
