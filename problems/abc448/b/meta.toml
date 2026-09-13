@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc448/tasks/abc448_b"
+contest = "abc448"
+task_id = "abc448_b"
+label = "B"
+title = "Pepper Addiction"
+time_limit_ms = 2000
+interactive = false
