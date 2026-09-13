@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc322/tasks/abc322_c"
+contest = "abc322"
+task_id = "abc322_c"
+label = "C"
+title = "Festival"
+time_limit_ms = 2000
+interactive = false
