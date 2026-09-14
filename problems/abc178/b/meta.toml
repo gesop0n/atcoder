@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc178/tasks/abc178_b"
+contest = "abc178"
+task_id = "abc178_b"
+label = "B"
+title = "Product Max"
+time_limit_ms = 2000
+interactive = false
