@@ -34,6 +34,14 @@
           version = "0.1.0";
           src = pkgs.lib.cleanSource ./tools/atcli;
           cargoLock.lockFile = ./tools/atcli/Cargo.lock;
+          nativeBuildInputs = [
+            pkgs.gitMinimal
+            pkgs.makeWrapper
+          ];
+          postInstall = ''
+            wrapProgram $out/bin/atcli \
+              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.gitMinimal ]}
+          '';
         };
         atcliApp = {
           type = "app";
@@ -82,7 +90,10 @@
 
         # atcli の開発環境。E2E テストもできるよう C++ toolchain を含める。
         devShells.atcli = pkgs.mkShell {
-          packages = cppTools ++ [ rust ];
+          packages = cppTools ++ [
+            pkgs.gitMinimal
+            rust
+          ];
           shellHook = clangdShellHook;
         };
 

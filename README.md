@@ -65,6 +65,16 @@ $ atcli test --rebuild
 
 デバッグビルドがシグナルで異常終了した場合は、macOS では LLDB、Linux では GDB が利用できれば失敗ケースを再実行し、`main.cpp` の停止位置と該当行を表示する。`--release` では提出時と同じ挙動を優先するため、この追加診断は行わない。
 
+テストを通過した取り組みを Git に保存するには、取り組みディレクトリで `atcli commit` を実行する。取り組みと、それが参照する問題データにある変更だけをステージしてコミットするため、別の問題ですでにステージしている変更は含まれない。コミットメッセージは問題メタデータから `Solve ABC178 B: Product Max` の形式で生成される。
+
+```console
+$ atcli commit
+$ atcli commit -m "解説AC ABC178 B"
+$ atcli commit --dry-run
+```
+
+`--dry-run` は、コミットやステージを行わずにメッセージと対象の変更を表示する。`atcli commit path/to/attempt` のように取り組みディレクトリを指定することもできる。テストは自動実行しないため、必要に応じて先に `atcli test` を実行する。
+
 今日の取り組みディレクトリへ移動しやすくするには、`~/.zshrc` など起動時に読み込まれる shell 設定で、`atcli path today` と `cd` を組み合わせた関数を定義する。
 
 ```zsh
