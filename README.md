@@ -75,29 +75,6 @@ $ atcli commit --dry-run
 
 `--dry-run` は、コミットやステージを行わずにメッセージと対象の変更を表示する。`atcli commit path/to/attempt` のように取り組みディレクトリを指定することもできる。テストは自動実行しないため、必要に応じて先に `atcli test` を実行する。
 
-今日の取り組みディレクトリへ移動しやすくするには、`~/.zshrc` など起動時に読み込まれる shell 設定で、`atcli path today` と `cd` を組み合わせた関数を定義する。
-
-```zsh
-atcd() {
-  local atcli_target="today"
-  local atcli_dir
-  case "$1" in
-    root | today)
-      atcli_target="$1"
-      shift
-      ;;
-  esac
-  atcli_dir="$(command atcli path "$atcli_target" "$@")" || return
-  builtin cd "$atcli_dir"
-}
-```
-
-```console
-$ atcd
-$ atcd --date 2026-09-08
-$ atcd root
-```
-
 サンプルを問題ページから取り直すには `atcli fetch` を使う。`sample-*.in` と `sample-*.out` だけを更新し、`my-*.in` などの自作ケースは残す。
 
 ```console
@@ -105,6 +82,44 @@ $ atcli fetch
 ```
 
 `tests/my-1.in` のように対応する `.out` がないケースは、実行結果を表示するだけで合否判定しない。`.out` を置くと通常の比較対象になる。
+
+### ディレクトリ移動
+
+atcli 自身は親 shell の cwd を変えられないため、移動系のコマンドは shell 関数のラッパーを通す。その関数は `atcli init zsh` が出力する。
+
+```zsh
+eval "$(atcli init zsh)"
+```
+
+これで `atcd`、`atcli cd`、`atcli new --cd` が使えるようになる。
+
+```console
+$ atcd                        # 今日の取り組みディレクトリ
+$ atcd root                   # リポジトリのルート
+$ atcd --date 2026-09-08      # 指定日の取り組みディレクトリ
+$ atcli cd abc462             # attempts/YYYY/MM/DD/abc462
+$ atcli cd abc462 b           # attempts/YYYY/MM/DD/abc462/b
+$ atcli new abc462 b --cd     # 作成して、そのままコンテストディレクトリへ移動する
+```
+
+`atcli cd` は日付を省略するとまず今日を見て、無ければそのコンテストを含む最新の日へ遡る。数日前に解いた問題へ戻るときに日付を思い出さなくて済む。`--date` を明示した場合は遡らない。複数の問題を作った `atcli new --cd` は、コンテストディレクトリへ移動する。
+
+`atcli` を direnv 経由でリポジトリ内でのみ PATH に載せている場合、shell 起動時に上の `eval` は実行できない。初回呼び出しで本物へ差し替えるブートストラップを置く。
+
+```zsh
+_atcli_bootstrap() {
+  local _atcli_init
+  _atcli_init="$(command atcli init zsh)" || return
+  unfunction atcli atcd _atcli_bootstrap 2>/dev/null
+  eval "$_atcli_init"
+}
+atcli() { _atcli_bootstrap || return; atcli "$@"; }
+atcd()  { _atcli_bootstrap || return; atcd  "$@"; }
+```
+
+`atcli init zsh` の出力を取得してから `unfunction` する順序が重要で、atcli が PATH にないときもブートストラップが残り、次回また試せる。
+
+shell 統合なしでパスだけが欲しい場合は `atcli path` を使う。`atcli path root`、`atcli path today [--date]`、`atcli path attempt <contest> [problem] [--date]` がある。
 
 ### ログインと提出
 
