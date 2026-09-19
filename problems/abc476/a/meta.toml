@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc476/tasks/abc476_a"
+contest = "abc476"
+task_id = "abc476_a"
+label = "A"
+title = "Appender"
+time_limit_ms = 2000
+interactive = false
