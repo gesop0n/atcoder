@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc476/tasks/abc476_c"
+contest = "abc476"
+task_id = "abc476_c"
+label = "C"
+title = "Third Largest Number"
+time_limit_ms = 2000
+interactive = false
