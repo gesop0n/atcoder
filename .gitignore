@@ -10,3 +10,6 @@
 
 # editor settings
 .zed/settings.json
+
+# clangd のバックグラウンドインデックス
+.cache/
