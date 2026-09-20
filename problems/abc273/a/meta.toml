@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc273/tasks/abc273_a"
+contest = "abc273"
+task_id = "abc273_a"
+label = "A"
+title = "A Recursive Function"
+time_limit_ms = 2000
+interactive = false
