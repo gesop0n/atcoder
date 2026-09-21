@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc245/tasks/abc245_b"
+contest = "abc245"
+task_id = "abc245_b"
+label = "B"
+title = "Mex"
+time_limit_ms = 2000
+interactive = false
