@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc116/tasks/abc116_b"
+contest = "abc116"
+task_id = "abc116_b"
+label = "B"
+title = "Collatz Problem"
+time_limit_ms = 2000
+interactive = false
