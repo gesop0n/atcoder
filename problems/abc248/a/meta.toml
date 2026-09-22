@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc248/tasks/abc248_a"
+contest = "abc248"
+task_id = "abc248_a"
+label = "A"
+title = "Lacked Number"
+time_limit_ms = 2000
+interactive = false
