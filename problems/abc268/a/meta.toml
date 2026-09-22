@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc268/tasks/abc268_a"
+contest = "abc268"
+task_id = "abc268_a"
+label = "A"
+title = "Five Integers"
+time_limit_ms = 2000
+interactive = false
