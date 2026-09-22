@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc249/tasks/abc249_b"
+contest = "abc249"
+task_id = "abc249_b"
+label = "B"
+title = "Perfect String"
+time_limit_ms = 2000
+interactive = false
