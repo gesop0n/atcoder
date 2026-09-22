@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc287/tasks/abc287_b"
+contest = "abc287"
+task_id = "abc287_b"
+label = "B"
+title = "Postal Card"
+time_limit_ms = 2000
+interactive = false
