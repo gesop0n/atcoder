@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc240/tasks/abc240_b"
+contest = "abc240"
+task_id = "abc240_b"
+label = "B"
+title = "Count Distinct Integers"
+time_limit_ms = 2000
+interactive = false
