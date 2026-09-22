@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc338/tasks/abc338_b"
+contest = "abc338"
+task_id = "abc338_b"
+label = "B"
+title = "Frequency"
+time_limit_ms = 2000
+interactive = false
