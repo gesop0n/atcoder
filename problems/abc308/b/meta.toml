@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc308/tasks/abc308_b"
+contest = "abc308"
+task_id = "abc308_b"
+label = "B"
+title = "Default Price"
+time_limit_ms = 2000
+interactive = false
