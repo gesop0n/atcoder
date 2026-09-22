@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc454/tasks/abc454_b"
+contest = "abc454"
+task_id = "abc454_b"
+label = "B"
+title = "Mapping"
+time_limit_ms = 2000
+interactive = false
