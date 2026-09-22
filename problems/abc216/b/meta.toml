@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc216/tasks/abc216_b"
+contest = "abc216"
+task_id = "abc216_b"
+label = "B"
+title = "Same Name"
+time_limit_ms = 2000
+interactive = false
