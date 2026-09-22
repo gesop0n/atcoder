@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc044/tasks/abc044_b"
+contest = "abc044"
+task_id = "abc044_b"
+label = "B"
+title = "Beautiful Strings"
+time_limit_ms = 2000
+interactive = false
