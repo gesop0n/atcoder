@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc109/tasks/abc109_b"
+contest = "abc109"
+task_id = "abc109_b"
+label = "B"
+title = "Shiritori"
+time_limit_ms = 2000
+interactive = false
