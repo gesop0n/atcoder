@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc241/tasks/abc241_b"
+contest = "abc241"
+task_id = "abc241_b"
+label = "B"
+title = "Pasta"
+time_limit_ms = 2000
+interactive = false
