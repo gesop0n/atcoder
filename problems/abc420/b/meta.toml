@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc420/tasks/abc420_b"
+contest = "abc420"
+task_id = "abc420_b"
+label = "B"
+title = "Most Minority"
+time_limit_ms = 2000
+interactive = false
