@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc091/tasks/abc091_b"
+contest = "abc091"
+task_id = "abc091_b"
+label = "B"
+title = "Two Colors Card Game"
+time_limit_ms = 2000
+interactive = false
