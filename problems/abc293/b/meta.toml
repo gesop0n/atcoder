@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc293/tasks/abc293_b"
+contest = "abc293"
+task_id = "abc293_b"
+label = "B"
+title = "Call the ID Number"
+time_limit_ms = 2000
+interactive = false
