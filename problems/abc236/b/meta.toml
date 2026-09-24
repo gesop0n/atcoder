@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc236/tasks/abc236_b"
+contest = "abc236"
+task_id = "abc236_b"
+label = "B"
+title = "Who is missing?"
+time_limit_ms = 2000
+interactive = false
