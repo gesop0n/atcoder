@@ -6,7 +6,8 @@ using ll = long long;
 using ull = unsigned long long;
 
 int main() {
-    int N;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    return 0;
+    int N;
 }
