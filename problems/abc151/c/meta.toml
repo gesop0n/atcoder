@@ -1,0 +1,7 @@
+url = "https://atcoder.jp/contests/abc151/tasks/abc151_c"
+contest = "abc151"
+task_id = "abc151_c"
+label = "C"
+title = "Welcome to AtCoder"
+time_limit_ms = 2000
+interactive = false
